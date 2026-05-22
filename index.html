@@ -1,1 +1,161 @@
+<!DOCTYPE html>
 
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Exclusive Content</title>
+
+    <style>
+
+        * {
+
+            box-sizing: border-box;
+
+            margin: 0;
+
+            padding: 0;
+
+        }
+
+        body {
+
+            background: linear-gradient(135deg, #0f0c1b, #201a30);
+
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
+
+            min-height: 100vh;
+
+            color: #ffffff;
+
+            padding: 20px;
+
+        }
+
+        .container {
+
+            text-align: center;
+
+            max-width: 400px;
+
+            width: 100%;
+
+            background: rgba(255, 255, 255, 0.03);
+
+            padding: 40px 30px;
+
+            border-radius: 24px;
+
+            border: 1px solid rgba(255, 255, 255, 0.08);
+
+            backdrop-filter: blur(10px);
+
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+
+        }
+
+        h1 {
+
+            font-size: 24px;
+
+            font-weight: 700;
+
+            margin-bottom: 12px;
+
+            letter-spacing: -0.5px;
+
+        }
+
+        p {
+
+            font-size: 15px;
+
+            color: #a0aec0;
+
+            margin-bottom: 35px;
+
+            line-height: 1.5;
+
+        }
+
+        .redirect-btn {
+
+            display: block;
+
+            width: 100%;
+
+            padding: 16px 24px;
+
+            background: linear-gradient(90deg, #ff007f, #7f00ff);
+
+            color: #ffffff;
+
+            font-size: 16px;
+
+            font-weight: 600;
+
+            text-decoration: none;
+
+            border-radius: 50px;
+
+            box-shadow: 0 4px 15px rgba(255, 0, 127, 0.4);
+
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+            animation: pulse 2s infinite;
+
+        }
+
+        .redirect-btn:active {
+
+            transform: scale(0.98);
+
+        }
+
+        @keyframes pulse {
+
+            0% { box-shadow: 0 0 0 0 rgba(255, 0, 127, 0.5); }
+
+            70% { box-shadow: 0 0 0 15px rgba(255, 0, 127, 0); }
+
+            100% { box-shadow: 0 0 0 0 rgba(255, 0, 127, 0); }
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+
+
+    <div class="container">
+
+        <h1>Welcome to My Page</h1>
+
+        <p>Tap below to access my premium feed and exclusive content.</p>
+
+        
+
+        <!-- CHANGE THE URL BELOW TO YOUR ACTUAL FANVUE LINK -->
+
+        <a href="https://www.fanvue.com/zoeggoth" class="redirect-btn">Enter Exclusive Content</a>
+
+    </div>
+
+
+
+</body>
+
+</html>
