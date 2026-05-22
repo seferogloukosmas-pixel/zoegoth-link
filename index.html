@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Zoe Goth | Exclusive Content</title>
+    <title>Zoe Goth</title>
     <style>
         * {
             box-sizing: border-box;
@@ -11,7 +11,6 @@
             padding: 0;
         }
         body {
-            /* The deep premium dark purple vibe */
             background-color: #0a0612;
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
             display: flex;
@@ -23,25 +22,21 @@
             position: relative;
         }
 
-        /* The background photo that fades out in the middle */
         .background-model {
             position: absolute;
             top: 0;
             left: 50%;
             transform: translateX(-50%);
             width: 100%;
-            max-width: 500px; /* Keeps it tight on desktop, full width on mobile */
-            height: 65vh; /* Takes up the top chunk of the screen */
-            /* CHANGE THE URL BELOW TO YOUR IMGBB DIRECT LINK */
+            max-width: 500px;
+            height: 65vh;
             background: url("https://iili.io/C9yUKFe.md.png") top center / cover no-repeat;
             z-index: 1;
-            /* This makes the image smoothly fade to transparent in the middle */
             -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 50%, rgba(0,0,0,0) 100%);
             mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 50%, rgba(0,0,0,0) 100%);
-            opacity: 0.75; /* Makes it blend subtly into the purple tint */
+            opacity: 0.75;
         }
 
-        /* Subtle dark purple glow behind everything */
         .bg-glow {
             position: absolute;
             top: 40vh;
@@ -53,14 +48,13 @@
             z-index: 2;
         }
 
-        /* Content Container pushed down slightly to sit under the picture face */
         .container {
             position: relative;
             z-index: 3;
             text-align: center;
             max-width: 360px;
             width: 100%;
-            margin-top: 30vh; /* Pushes the card down so your model's face is fully clear */
+            margin-top: 30vh;
             background: rgba(10, 6, 18, 0.6);
             padding: 35px 25px;
             border-radius: 24px;
@@ -92,7 +86,6 @@
             line-height: 1.5;
         }
         
-        /* Premium Pulsing Button */
         .btn-main {
             display: block;
             width: 100%;
@@ -101,7 +94,8 @@
             color: #ffffff;
             font-size: 16px;
             font-weight: 600;
-            text-decoration: none;
+            border: none;
+            cursor: pointer;
             border-radius: 50px;
             transition: transform 0.2s ease;
             box-shadow: 0 4px 25px rgba(138, 43, 226, 0.5);
@@ -121,7 +115,6 @@
 <body>
 
     <div class="background-model"></div>
-    
     <div class="bg-glow"></div>
 
     <div class="container">
@@ -129,8 +122,18 @@
         <div class="handle">@zoegoth</div>
         <p>Tap below to unlock my premium daily feed and message me directly💜</p>
         
-        <a href="https://www.fanvue.com/zoegoth" class="btn-main">🔒 Access Premium Feed</a>
+        <button data-gate="aHR0cHM6Ly93d3cuZmFudnVlLmNvbS96b2Vnb3Ro" onclick="unlock(this)" class="btn-main">
+            🔒 Access Premium Feed
+        </button>
     </div>
+
+    <script>
+        function unlock(element) {
+            var encoded = element.getAttribute('data-gate');
+            var decoded = atob(encoded);
+            window.open(decoded, '_blank', 'noopener,noreferrer');
+        }
+    </script>
 
 </body>
 </html>
