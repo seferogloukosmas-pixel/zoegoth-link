@@ -1,161 +1,136 @@
 <!DOCTYPE html>
-
 <html lang="en">
-
 <head>
-
     <meta charset="UTF-8">
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Exclusive Content</title>
-
+    <title>Zoe Goth | Exclusive Content</title>
     <style>
-
         * {
-
             box-sizing: border-box;
-
             margin: 0;
-
             padding: 0;
-
         }
-
         body {
-
-            background: linear-gradient(135deg, #0f0c1b, #201a30);
-
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-
+            /* The deep premium dark purple vibe */
+            background-color: #0a0612;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
             display: flex;
-
             justify-content: center;
-
             align-items: center;
-
             min-height: 100vh;
-
             color: #ffffff;
-
-            padding: 20px;
-
+            overflow-x: hidden;
+            position: relative;
         }
 
+        /* The background photo that fades out in the middle */
+        .background-model {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100%;
+            max-width: 500px; /* Keeps it tight on desktop, full width on mobile */
+            height: 65vh; /* Takes up the top chunk of the screen */
+            /* CHANGE THE URL BELOW TO YOUR IMGBB DIRECT LINK */
+            background: url("https://iili.io/C9yUKFe.md.png") top center / cover no-repeat;
+            z-index: 1;
+            /* This makes the image smoothly fade to transparent in the middle */
+            -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 50%, rgba(0,0,0,0) 100%);
+            mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 50%, rgba(0,0,0,0) 100%);
+            opacity: 0.75; /* Makes it blend subtly into the purple tint */
+        }
+
+        /* Subtle dark purple glow behind everything */
+        .bg-glow {
+            position: absolute;
+            top: 40vh;
+            width: 300px;
+            height: 300px;
+            background: #8a2be2;
+            filter: blur(120px);
+            opacity: 0.3;
+            z-index: 2;
+        }
+
+        /* Content Container pushed down slightly to sit under the picture face */
         .container {
-
+            position: relative;
+            z-index: 3;
             text-align: center;
-
-            max-width: 400px;
-
+            max-width: 360px;
             width: 100%;
-
-            background: rgba(255, 255, 255, 0.03);
-
-            padding: 40px 30px;
-
+            margin-top: 30vh; /* Pushes the card down so your model's face is fully clear */
+            background: rgba(10, 6, 18, 0.6);
+            padding: 35px 25px;
             border-radius: 24px;
-
-            border: 1px solid rgba(255, 255, 255, 0.08);
-
-            backdrop-filter: blur(10px);
-
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
-
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8);
         }
-
+        
         h1 {
-
             font-size: 24px;
-
             font-weight: 700;
-
-            margin-bottom: 12px;
-
+            margin-bottom: 6px;
             letter-spacing: -0.5px;
-
+            text-shadow: 0 2px 10px rgba(0,0,0,0.5);
         }
-
-        p {
-
-            font-size: 15px;
-
-            color: #a0aec0;
-
-            margin-bottom: 35px;
-
-            line-height: 1.5;
-
-        }
-
-        .redirect-btn {
-
-            display: block;
-
-            width: 100%;
-
-            padding: 16px 24px;
-
-            background: linear-gradient(90deg, #ff007f, #7f00ff);
-
-            color: #ffffff;
-
-            font-size: 16px;
-
+        .handle {
+            font-size: 14px;
+            color: #b366ff;
             font-weight: 600;
-
-            text-decoration: none;
-
-            border-radius: 50px;
-
-            box-shadow: 0 4px 15px rgba(255, 0, 127, 0.4);
-
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
-
-            animation: pulse 2s infinite;
-
+            margin-bottom: 20px;
+            text-transform: lowercase;
+            letter-spacing: 0.5px;
         }
-
-        .redirect-btn:active {
-
+        p {
+            font-size: 14px;
+            color: #cbd5e0;
+            margin-bottom: 30px;
+            line-height: 1.5;
+        }
+        
+        /* Premium Pulsing Button */
+        .btn-main {
+            display: block;
+            width: 100%;
+            padding: 16px 20px;
+            background: linear-gradient(90deg, #8a2be2, #5200cc);
+            color: #ffffff;
+            font-size: 16px;
+            font-weight: 600;
+            text-decoration: none;
+            border-radius: 50px;
+            transition: transform 0.2s ease;
+            box-shadow: 0 4px 25px rgba(138, 43, 226, 0.5);
+            animation: pulse 2.5s infinite;
+        }
+        .btn-main:active {
             transform: scale(0.98);
-
         }
 
         @keyframes pulse {
-
-            0% { box-shadow: 0 0 0 0 rgba(255, 0, 127, 0.5); }
-
-            70% { box-shadow: 0 0 0 15px rgba(255, 0, 127, 0); }
-
-            100% { box-shadow: 0 0 0 0 rgba(255, 0, 127, 0); }
-
+            0% { box-shadow: 0 0 0 0 rgba(138, 43, 226, 0.6); }
+            70% { box-shadow: 0 0 0 15px rgba(138, 43, 226, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(138, 43, 226, 0); }
         }
-
     </style>
-
 </head>
-
 <body>
 
-
+    <div class="background-model"></div>
+    
+    <div class="bg-glow"></div>
 
     <div class="container">
-
-        <h1>Welcome to My Page</h1>
-
-        <p>Tap below to access my premium feed and exclusive content.</p>
-
+        <h1>Zoe Goth</h1>
+        <div class="handle">@zoegoth</div>
+        <p>Tap below to unlock my premium daily feed and message me directly.</p>
         
-
-        <!-- CHANGE THE URL BELOW TO YOUR ACTUAL FANVUE LINK -->
-
-        <a href="https://www.fanvue.com/zoeggoth" class="redirect-btn">Enter Exclusive Content</a>
-
+        <a href="https://www.fanvue.com/zoeggoth" class="btn-main">🔒 Access Premium Feed</a>
     </div>
 
-
-
 </body>
-
 </html>
