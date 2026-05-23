@@ -53,15 +53,15 @@
             z-index: 3;
             text-align: center;
             max-width: 360px;
-            width: 100%;
-            margin-top: 30vh;
-            background: rgba(10, 6, 18, 0.6);
-            padding: 35px 25px;
+            width: 90%;
+            margin-top: 35vh;
+            background: rgba(10, 6, 18, 0.7);
+            padding: 30px 20px;
             border-radius: 24px;
-            border: 1px solid rgba(255, 255, 255, 0.06);
-            backdrop-filter: blur(15px);
-            -webkit-backdrop-filter: blur(15px);
-            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8);
+            border: 1px solid rgba(255, 255, 255, 0.04);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.9);
         }
         
         h1 {
@@ -75,34 +75,41 @@
             font-size: 14px;
             color: #b366ff;
             font-weight: 600;
-            margin-bottom: 20px;
+            margin-bottom: 25px;
             text-transform: lowercase;
             letter-spacing: 0.5px;
         }
-        p {
-            font-size: 14px;
-            color: #cbd5e0;
-            margin-bottom: 30px;
-            line-height: 1.5;
-        }
         
-        .btn-main {
+        .links-wrapper {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+
+        .btn-link {
             display: block;
             width: 100%;
-            padding: 16px 20px;
-            background: linear-gradient(90deg, #8a2be2, #5200cc);
+            padding: 15px 20px;
             color: #ffffff;
-            font-size: 16px;
+            font-size: 15px;
             font-weight: 600;
-            border: none;
-            cursor: pointer;
+            text-decoration: none;
             border-radius: 50px;
-            transition: transform 0.2s ease;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            background: rgba(255, 255, 255, 0.05);
+            transition: all 0.2s ease;
+            cursor: pointer;
+        }
+        .btn-link:active {
+            transform: scale(0.98);
+        }
+
+        /* Το αληθινό κουμπί με το μωβ/gothic gradient που αναβοσβήνει */
+        .btn-main {
+            background: linear-gradient(90deg, #8a2be2, #5200cc);
+            border: none;
             box-shadow: 0 4px 25px rgba(138, 43, 226, 0.5);
             animation: pulse 2.5s infinite;
-        }
-        .btn-main:active {
-            transform: scale(0.98);
         }
 
         @keyframes pulse {
@@ -120,11 +127,20 @@
     <div class="container">
         <h1>Zoe Goth</h1>
         <div class="handle">@zoegoth</div>
-        <p>Tap below to unlock my premium daily feed and message me directly💜</p>
         
-        <button data-gate="aHR0cHM6Ly93d3cuZmFudnVlLmNvbS96b2Vnb3Ro" onclick="unlock(this)" class="btn-main">
-            🔒 Access Premium Feed
-        </button>
+        <div class="links-wrapper">
+            <button data-gate="aHR0cHM6Ly93d3cuZmFudnVlLmNvbS96b2Vnb3Ro" onclick="unlock(this)" class="btn-link btn-main">
+                Behind The Scenes ❤️
+            </button>
+
+            <a href="#" onclick="return false;" class="btn-link">
+                Business Inquiries
+            </a>
+
+            <a href="#" onclick="return false;" class="btn-link">
+                Official Merchandise
+            </a>
+        </div>
     </div>
 
     <script>
