@@ -1,15 +1,17 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Zoe Goth</title>
+    <title>Zoe Goth 🖤</title>
     <style>
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
         }
+
         body {
             background-color: #0a0612;
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
@@ -32,8 +34,16 @@
             height: 65vh;
             background: url("https://iili.io/C9yUKFe.md.png") top center / cover no-repeat;
             z-index: 1;
-            -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 50%, rgba(0,0,0,0) 100%);
-            mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 50%, rgba(0,0,0,0) 100%);
+            -webkit-mask-image: linear-gradient(
+                to bottom,
+                rgba(0,0,0,1) 50%,
+                rgba(0,0,0,0) 100%
+            );
+            mask-image: linear-gradient(
+                to bottom,
+                rgba(0,0,0,1) 50%,
+                rgba(0,0,0,0) 100%
+            );
             opacity: 0.75;
         }
 
@@ -63,7 +73,7 @@
             -webkit-backdrop-filter: blur(20px);
             box-shadow: 0 20px 50px rgba(0, 0, 0, 0.9);
         }
-        
+
         h1 {
             font-size: 24px;
             font-weight: 700;
@@ -71,23 +81,39 @@
             letter-spacing: -0.5px;
             text-shadow: 0 2px 10px rgba(0,0,0,0.5);
         }
+
         .handle {
             font-size: 14px;
             color: #b366ff;
             font-weight: 600;
-            margin-bottom: 15px;
+            margin-bottom: 20px;
             text-transform: lowercase;
             letter-spacing: 0.5px;
         }
 
         .bio-text {
-            font-size: 14px;
-            color: rgba(255, 255, 255, 0.85);
-            line-height: 1.5;
-            margin-bottom: 25px;
-            padding: 0 10px;
+            font-size: 15px;
+            color: rgba(255,255,255,0.92);
+            line-height: 1.65;
+            margin-bottom: 18px;
+            padding: 0 5px;
         }
-        
+
+        .price {
+            font-size: 25px;
+            font-weight: 800;
+            margin-bottom: 14px;
+            color: #ffffff;
+        }
+
+        .price span {
+            font-size: 12px;
+            font-weight: 400;
+            color: rgba(255,255,255,0.6);
+            display: block;
+            margin-top: 3px;
+        }
+
         .links-wrapper {
             display: flex;
             flex-direction: column;
@@ -103,27 +129,56 @@
             font-weight: 600;
             text-decoration: none;
             border-radius: 50px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            background: rgba(255,255,255,0.05);
             transition: all 0.2s ease;
             cursor: pointer;
         }
+
         .btn-link:active {
             transform: scale(0.98);
         }
 
-        /* Το αληθινό κουμπί με το μωβ/gothic gradient που αναβοσβήνει */
         .btn-main {
             background: linear-gradient(90deg, #8a2be2, #5200cc);
             border: none;
-            box-shadow: 0 4px 25px rgba(138, 43, 226, 0.5);
+            box-shadow: 0 4px 25px rgba(138,43,226,0.5);
             animation: pulse 2.5s infinite;
         }
 
+        .btn-main:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+            animation: none;
+        }
+
+        .btn-secondary {
+            background: rgba(255,255,255,0.07);
+        }
+
+        .divider-text {
+            font-size: 12px;
+            color: rgba(255,255,255,0.5);
+            margin: 2px 0;
+        }
+
+        .disclosure {
+            font-size: 11px;
+            color: rgba(255,255,255,0.5);
+            margin-top: 18px;
+            line-height: 1.5;
+        }
+
         @keyframes pulse {
-            0% { box-shadow: 0 0 0 0 rgba(138, 43, 226, 0.6); }
-            70% { box-shadow: 0 0 0 15px rgba(138, 43, 226, 0); }
-            100% { box-shadow: 0 0 0 0 rgba(138, 43, 226, 0); }
+            0% {
+                box-shadow: 0 0 0 0 rgba(138,43,226,0.6);
+            }
+            70% {
+                box-shadow: 0 0 0 15px rgba(138,43,226,0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(138,43,226,0);
+            }
         }
     </style>
 </head>
@@ -136,23 +191,58 @@
         <h1>Zoe Goth</h1>
         <div class="handle">@zoegoth</div>
 
-        <!-- Μικρή περιγραφή πάνω από το link -->
         <div class="bio-text">
-            Welcome to my dark side. Enter at your own risk... 🖤🥀
+            I saved 8 little surprises for you... 🖤
+            <br><br>
+            Once you start, you're going to crave the rest. 😈
         </div>
-        
+
+        <div class="price">
+            $12.99
+            <span>8 Exclusive Photos • One-Time Purchase</span>
+        </div>
+
         <div class="links-wrapper">
-            <button data-gate="aHR0cHM6Ly93d3cuZmFudnVlLmNvbS96b2Vnb3RoL2Z2LTM=" onclick="unlock(this)" class="btn-link btn-main">
+
+            <!-- Paid Media Link:
+                 Insert encoded paid-media URL in data-gate.
+                 Remove disabled when ready. -->
+            <button
+                data-gate=""
+                onclick="unlock(this)"
+                class="btn-link btn-main"
+                disabled>
+                Unlock All 8 Photos 🖤
+            </button>
+
+            <div class="divider-text">Or explore more</div>
+
+            <!-- Existing working Fanvue tracking link -->
+            <button
+                data-gate="aHR0cHM6Ly93d3cuZmFudnVlLmNvbS96b2Vnb3RoL2Z2LTM="
+                onclick="unlock(this)"
+                class="btn-link btn-secondary">
                 Behind The Scenes 🖤
             </button>
+
+        </div>
+
+        <div class="disclosure">
+            AI-created gothic character • 18+ content
         </div>
     </div>
 
     <script>
         function unlock(element) {
-            var encoded = element.getAttribute('data-gate');
-            var decoded = atob(encoded);
-            window.open(decoded, '_blank', 'noopener,noreferrer');
+            const encoded = element.getAttribute('data-gate');
+            if (!encoded) return;
+
+            const decoded = atob(encoded);
+            const url = new URL(decoded);
+
+            if (url.protocol !== 'https:') return;
+
+            window.open(url.href, '_blank', 'noopener,noreferrer');
         }
     </script>
 
