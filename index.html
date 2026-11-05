@@ -2,317 +2,343 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="theme-color" content="#0a0612">
-    <title>Zoe Goth 🖤</title>
-
-    <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
-        body {
-            background-color: #0a0612;
-            font-family: -apple-system, BlinkMacSystemFont,
-                "Segoe UI", Roboto, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            color: #ffffff;
-            overflow-x: hidden;
-            position: relative;
-        }
-
-        .background-model {
-            position: absolute;
-            top: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 100%;
-            max-width: 500px;
-            height: 65vh;
-            background:
-                url("https://iili.io/C9yUKFe.md.png")
-                top center / cover no-repeat;
-            z-index: 1;
-            -webkit-mask-image: linear-gradient(
-                to bottom,
-                rgba(0,0,0,1) 50%,
-                rgba(0,0,0,0) 100%
-            );
-            mask-image: linear-gradient(
-                to bottom,
-                rgba(0,0,0,1) 50%,
-                rgba(0,0,0,0) 100%
-            );
-            opacity: 0.75;
-        }
-
-        .bg-glow {
-            position: absolute;
-            top: 40vh;
-            width: 300px;
-            height: 300px;
-            background: #8a2be2;
-            filter: blur(120px);
-            opacity: 0.3;
-            z-index: 2;
-        }
-
-        .container {
-            position: relative;
-            z-index: 3;
-            text-align: center;
-            max-width: 360px;
-            width: 90%;
-            margin-top: 35vh;
-            background: rgba(10, 6, 18, 0.7);
-            padding: 30px 20px;
-            border-radius: 24px;
-            border: 1px solid rgba(255,255,255,0.04);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            box-shadow: 0 20px 50px rgba(0,0,0,0.9);
-        }
-
-        h1 {
-            font-size: 24px;
-            font-weight: 700;
-            margin-bottom: 6px;
-            letter-spacing: -0.5px;
-            text-shadow:
-                0 2px 10px rgba(0,0,0,0.5);
-        }
-
-        .handle {
-            font-size: 14px;
-            color: #b366ff;
-            font-weight: 600;
-            margin-bottom: 8px;
-            text-transform: lowercase;
-            letter-spacing: 0.5px;
-        }
-
-        .tagline {
-            font-size: 13px;
-            color: rgba(255,255,255,0.7);
-            margin-bottom: 22px;
-        }
-
-        .bio-text {
-            font-size: 14px;
-            color: rgba(255,255,255,0.9);
-            line-height: 1.6;
-            margin-bottom: 22px;
-            padding: 0 5px;
-        }
-
-        .links-wrapper {
-            display: flex;
-            flex-direction: column;
-            gap: 14px;
-        }
-
-        .btn-link {
-            display: block;
-            width: 100%;
-            padding: 15px 20px;
-            color: #ffffff;
-            font-size: 15px;
-            font-weight: 600;
-            text-decoration: none;
-            border-radius: 50px;
-            border: 1px solid rgba(255,255,255,0.1);
-            background: rgba(255,255,255,0.05);
-            transition: all 0.2s ease;
-            cursor: pointer;
-        }
-
-        .btn-link:active {
-            transform: scale(0.98);
-        }
-
-        .btn-main {
-            background: linear-gradient(
-                90deg, #8a2be2, #5200cc
-            );
-            border: none;
-            box-shadow:
-                0 4px 25px rgba(138,43,226,0.5);
-            animation: pulse 2.5s infinite;
-        }
-
-        .offer-card {
-            margin-top: 28px;
-            padding: 22px 16px;
-            background: rgba(100,35,160,0.13);
-            border: 1px solid rgba(179,102,255,0.25);
-            border-radius: 20px;
-        }
-
-        .offer-label {
-            font-size: 11px;
-            font-weight: 700;
-            letter-spacing: 2px;
-            color: #c48aff;
-            text-transform: uppercase;
-            margin-bottom: 15px;
-        }
-
-        .offer-caption {
-            font-size: 14px;
-            line-height: 1.7;
-            color: rgba(255,255,255,0.93);
-            margin-bottom: 18px;
-        }
-
-        .offer-caption p + p {
-            margin-top: 12px;
-        }
-
-        .price {
-            font-size: 27px;
-            font-weight: 800;
-            color: #ffffff;
-            margin-bottom: 15px;
-        }
-
-        .price span {
-            display: block;
-            font-size: 12px;
-            font-weight: 400;
-            color: rgba(255,255,255,0.55);
-            margin-top: 5px;
-        }
-
-        .btn-offer {
-            background: linear-gradient(
-                90deg, #9c39ed, #6800d6
-            );
-            border: none;
-            box-shadow:
-                0 4px 20px rgba(138,43,226,0.3);
-        }
-
-        @keyframes pulse {
-            0% {
-                box-shadow:
-                    0 0 0 0 rgba(138,43,226,0.6);
-            }
-            70% {
-                box-shadow:
-                    0 0 0 15px rgba(138,43,226,0);
-            }
-            100% {
-                box-shadow:
-                    0 0 0 0 rgba(138,43,226,0);
-            }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0a0612">
+  <title>Zoe Goth 🖤</title>
+  <style>
+    * { box-sizing: border-box; }
+    html { background: #0a0612; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background: radial-gradient(ellipse 85% 40% at 50% 10%, #26113c 0%, #0a0612 78%);
+      color: #fff;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+    .page {
+      width: min(100% - 28px, 410px);
+      margin: 0 auto 12px;
+      position: relative;
+      z-index: 1;
+    }
+    .photo-backdrop {
+      position: absolute;
+      top: 28px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: min(100%, 640px);
+      height: min(600px, 82svh);
+      min-height: 0;
+      z-index: 0;
+      pointer-events: none;
+      overflow: hidden;
+    }
+    .photo-backdrop img {
+      width: 100%;
+      height: min(410px, 57svh);
+      display: block;
+      object-fit: cover;
+      object-position: 52% top;
+      -webkit-mask-image: linear-gradient(to bottom, black 0%, black 30%, rgba(0,0,0,.85) 53%, rgba(0,0,0,.42) 76%, transparent 100%);
+      mask-image: linear-gradient(to bottom, black 0%, black 30%, rgba(0,0,0,.85) 53%, rgba(0,0,0,.42) 76%, transparent 100%);
+    }
+    .photo-backdrop::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to bottom, rgba(10,6,18,.02) 0%, rgba(10,6,18,.13) 24%, rgba(10,6,18,.44) 46%, rgba(10,6,18,.78) 70%, #0a0612 100%);
+    }
+    .photo-spacer { height: clamp(195px, 53vw, 215px); }
+    .identity {
+      text-align: center;
+      padding: 2px 8px 12px;
+      text-shadow: 0 2px 16px rgba(0,0,0,.8);
+    }
+    h1 {
+      margin: 0 0 2px;
+      font-size: 24px;
+      font-weight: 750;
+      letter-spacing: -.6px;
+    }
+    .handle {
+      margin: 0 0 4px;
+      color: #b986f8;
+      font-size: 13px;
+      font-weight: 600;
+    }
+    .tagline {
+      margin: 0;
+      color: #d3c2e6;
+      font-size: 13px;
+    }
+    .accent-line {
+      display: block;
+      width: 72px;
+      height: 3px;
+      border-radius: 20px;
+      margin: 8px auto 7px;
+      background: linear-gradient(90deg, #5a1aa0, #c37aff, #5a1aa0);
+      box-shadow: 0 0 14px rgba(167,83,237,.4);
+    }
+    .welcome {
+      color: #cfc3d9;
+      font-size: 12px;
+      line-height: 1.45;
+      margin: 0;
+    }
+    .card {
+      border: 1px solid rgba(167,95,248,.36);
+      background: rgba(28,18,42,.90);
+      border-radius: 19px;
+      padding: 14px 15px;
+      box-shadow: 0 10px 26px rgba(0,0,0,.17);
+    }
+    .eyebrow {
+      color: #c697ff;
+      text-transform: uppercase;
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 1.4px;
+    }
+    .topline {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 9px;
+      margin-bottom: 8px;
+    }
+    .discount {
+      white-space: nowrap;
+      font-size: 10px;
+      line-height: 1;
+      color: #05b14a;
+      background: #152a27;
+      box-shadow: none;
+      padding: 7px 9px;
+      border-radius: 999px;
+      font-weight: 800;
+    }
+    h2 {
+      font-size: 18px;
+      line-height: 1.22;
+      letter-spacing: -.35px;
+      margin: 0 0 6px;
+    }
+    .desc {
+      font-size: 12px;
+      line-height: 1.42;
+      color: #d9cde5;
+      margin: 0 0 10px;
+    }
+    .price-line {
+      display: flex;
+      align-items: baseline;
+      gap: 7px;
+      margin-bottom: 9px;
+    }
+    .price {
+      font-size: 25px;
+      font-weight: 800;
+      line-height: 1;
+      letter-spacing: -.5px;
+    }
+    .period {
+      font-size: 12px;
+      color: #c6b4d5;
+    }
+    button.cta {
+      display: block;
+      width: 100%;
+      border: 0;
+      padding: 12px;
+      border-radius: 999px;
+      color: white;
+      cursor: pointer;
+      font: inherit;
+      font-size: 14px;
+      font-weight: 750;
+      background: linear-gradient(95deg,#9134e5,#5d19bf);
+      box-shadow: 0 5px 23px rgba(132,42,222,.36);
+      transition: transform .16s, filter .16s;
+    }
+    button.cta:focus-visible {
+      outline: 3px solid #d9acff;
+      outline-offset: 4px;
+    }
+    button.cta:active { transform: scale(.98); }
+    button.cta:hover { filter: brightness(1.09); }
+    .divider {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: #bda5ce;
+      font-size: 10px;
+      letter-spacing: 1.2px;
+      font-weight: 700;
+      margin: 11px 0;
+      white-space: nowrap;
+      justify-content: center;
+    }
+    .divider::before,
+    .divider::after {
+      content: "";
+      height: 1px;
+      flex: 1;
+      background: linear-gradient(90deg, transparent, #753ca0);
+    }
+    .divider::after { transform: rotate(180deg); }
+    .offer { background: rgba(26,16,39,.92); }
+    .offer .eyebrow {
+      display: block;
+      margin-bottom: 8px;
+    }
+    .offer .desc { margin-bottom: 10px; }
+    .offer .desc p { margin: 0; }
+    .offer .desc p + p { margin-top: 5px; }
+    .footer {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 6px;
+      margin: 11px 0 0;
+      color: #a99bb8;
+      font-size: 11px;
+    }
+    .footer svg {
+      width: 12px;
+      height: 12px;
+      flex: none;
+    }
+    @media(max-height:750px) and (max-width:600px) {
+      .photo-spacer { height: 145px; }
+      .identity { padding-bottom: 8px; }
+      .card { padding: 12px 14px; }
+      .desc { line-height: 1.36; }
+      .divider { margin: 9px 0; }
+    }
+    @media(max-width:350px) {
+      .card { padding: 16px 14px; }
+      h2 { font-size: 18px; }
+      .discount { font-size: 9px; }
+    }
+    @media(min-width:700px) {
+      .page { margin-top: 0; }
+    }
+    @media(prefers-reduced-motion:reduce) {
+      button.cta { transition: none; }
+    }
+  </style>
 </head>
-
 <body>
 
-    <div class="background-model"></div>
-    <div class="bg-glow"></div>
+  <!-- ZOE PHOTO BACKGROUND -->
 
-    <div class="container">
+  <div class="photo-backdrop" aria-hidden="true">
+    <img src="data:image/webp;base64,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" alt="" loading="eager" fetchpriority="high">
+  </div>
 
-        <h1>Zoe Goth</h1>
+  <main class="page">
+    <div class="photo-spacer" aria-hidden="true"></div>
 
-        <div class="handle">@zoegoth</div>
+    <header class="identity">
+      <h1>Zoe Goth</h1>
+      <p class="handle">@zoegoth</p>
+      <p class="tagline">Your Favourite Vamp Goth 🦇</p>
+      <span class="accent-line" aria-hidden="true"></span>
+      <p class="welcome">Welcome to my dark side. Enter at your own risk... 🖤🥀</p>
+    </header>
 
-        <div class="tagline">
-            Your Favourite Vamp Goth 🦇
-        </div>
+    <!-- FIRST OPTION -->
 
-        <div class="bio-text">
-            Welcome to my dark side.<br>
-            Enter at your own risk... 🖤🥀
-        </div>
+    <section class="card" aria-labelledby="join-title">
+      <div class="topline">
+        <span class="eyebrow">THE PRIVATE WORLD</span>
+        <span class="discount">43.68% OFF</span>
+      </div>
 
-        <!-- MAIN FANVUE PAGE -->
+      <h2 id="join-title">Chat With Me 🖤</h2>
 
-        <div class="links-wrapper">
-            <button
-                data-gate="aHR0cHM6Ly93d3cuZmFudnVlLmNvbS96b2Vnb3RoL2Z2LTM="
-                onclick="unlock(this)"
-                class="btn-link btn-main">
-                Behind The Scenes 🖤
-            </button>
-        </div>
+      <p class="desc">
+        Exclusive content, private updates, and flirty chats with me. 🖤
+      </p>
 
-        <!-- EXCLUSIVE PHOTO OFFER -->
+      <div class="price-line">
+        <span class="price">$4.50</span>
+        <span class="period">first month</span>
+      </div>
 
-        <div class="offer-card">
+      <button
+        class="cta"
+        type="button"
+        data-gate="aHR0cHM6Ly93d3cuZmFudnVlLmNvbS96b2Vnb3RoL2Z2LTM="
+        onclick="unlock(this)">
+        Join Zoe 🖤
+      </button>
+    </section>
 
-            <div class="offer-label">
-                🖤 Exclusive Photo Drop
-            </div>
-
-            <div class="offer-caption">
-                <p>
-                    I saved 8 little surprises
-                    for you... 🖤
-                </p>
-
-                <p>
-                    Each one pulls you in deeper…
-                    and the best ones are
-                    waiting inside. 🦇
-                </p>
-            </div>
-
-            <div class="price">
-                $13.99
-                <span>
-                    8 Exclusive Photos • One-Time Purchase
-                </span>
-            </div>
-
-            <!-- PAID MEDIA LINK: FVML-2 -->
-
-            <button
-                data-gate="aHR0cHM6Ly93d3cuZmFudnVlLmNvbS96b2Vnb3RoL21lZGlhL2Z2bWwtMg=="
-                onclick="unlock(this)"
-                class="btn-link btn-offer">
-                Unlock All 8 Photos 🖤
-            </button>
-
-        </div>
-
+    <div class="divider" aria-hidden="true">
+      OR UNLOCK SOMETHING SPECIAL
     </div>
 
-    <script>
-        function unlock(element) {
-            const encoded =
-                element.getAttribute('data-gate');
+    <!-- SECOND OPTION -->
 
-            if (!encoded) return;
+    <section class="card offer" aria-labelledby="photo-title">
+      <span class="eyebrow">EXCLUSIVE PHOTO DROP</span>
 
-            try {
-                const decoded = atob(encoded);
-                const url = new URL(decoded);
+      <h2 id="photo-title">The Secret 7-Photo Drop 🦇</h2>
 
-                if (
-                    url.protocol !== 'https:' ||
-                    url.hostname !== 'www.fanvue.com'
-                ) return;
+      <div class="desc">
+        <p>I saved 7 little surprises for you… 🖤</p>
+        <p>Each one pulls you in deeper… and the best ones are waiting inside. 🦇</p>
+      </div>
 
-                window.open(
-                    url.href,
-                    '_blank',
-                    'noopener,noreferrer'
-                );
-            } catch (error) {
-                console.error('Invalid destination link');
-            }
-        }
-    </script>
+      <div class="price-line">
+        <span class="price">$13.99</span>
+        <span class="period">one-time purchase</span>
+      </div>
 
+      <button
+        class="cta"
+        type="button"
+        data-gate="aHR0cHM6Ly93d3cuZmFudnVlLmNvbS96b2Vnb3RoL21lZGlhL2Z2bWwtMg=="
+        onclick="unlock(this)">
+        Unlock All 7 Photos 🖤
+      </button>
+    </section>
+
+    <p class="footer">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+        <rect x="5" y="10" width="14" height="11" rx="2"/>
+        <path d="M8 10V7a4 4 0 0 1 8 0v3"/>
+      </svg>
+      Secure payments
+    </p>
+  </main>
+
+  <script>
+    function unlock(button) {
+      const encoded = button.getAttribute('data-gate');
+      if (!encoded) return;
+
+      try {
+        const url = new URL(atob(encoded));
+
+        if (
+          url.protocol !== 'https:' ||
+          url.hostname !== 'www.fanvue.com'
+        ) return;
+
+        window.open(
+          url.href,
+          '_blank',
+          'noopener,noreferrer'
+        );
+      } catch (error) {
+        console.error('Invalid destination link');
+      }
+    }
+  </script>
 </body>
 </html>
