@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#0a0612">
-  <meta name="description" content="Explore Zoe Goth's exclusive content and photo collection.">
+  <meta name="description" content="Explore Zoe Goth's exclusive content and free Telegram updates.">
   <title>Zoe Goth 🖤</title>
   <style>
     * { box-sizing: border-box; }
@@ -23,24 +23,18 @@
       position: relative;
       z-index: 1;
     }
-
-/* Optimized cinematic hero, pre-faded into the page's dark background. */
-.photo-backdrop {
-  position: absolute;
-  top: -67px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: min(100%, 500px);
-  z-index: 0;
-  pointer-events: none;
-}
-.photo-backdrop img {
-  display: block;
-  width: 100%;
-  height: auto;
-}
-/* Keep copy clear of the eyes and the first CTA visible on mobile. */
-.photo-spacer { height: clamp(198px, 55vw, 230px); }
+    /* Original cinematic hero: keep zoe-hero.webp in the same folder. */
+    .photo-backdrop {
+      position: absolute;
+      top: -67px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: min(100%, 500px);
+      z-index: 0;
+      pointer-events: none;
+    }
+    .photo-backdrop img { display: block; width: 100%; height: auto; }
+    .photo-spacer { height: clamp(198px, 55vw, 230px); }
     .identity { text-align: center; padding: 2px 8px 12px; text-shadow: 0 2px 16px rgba(0,0,0,.8); }
     h1 { margin: 0 0 2px; font-size: 24px; font-weight: 750; letter-spacing: -.6px; }
     .handle { margin: 0 0 4px; color: #b986f8; font-size: 13px; font-weight: 600; }
@@ -77,15 +71,19 @@
     }
     button.cta:focus-visible { outline:3px solid #d9acff; outline-offset:4px; }
     button.cta:active { transform:scale(.98); }
-    button.cta:hover { filter:brightness(1.09); }
+    button.cta:hover:not(:disabled) { filter:brightness(1.09); }
+    button.cta:disabled { opacity: .55; cursor:not-allowed; }
     .divider { display:flex; align-items:center; gap:10px; color:#bda5ce; font-size:10px; letter-spacing:1.2px; font-weight:700; margin:11px 0; white-space:nowrap; justify-content:center; }
     .divider::before,.divider::after {content:""; height:1px; flex:1; background:linear-gradient(90deg, transparent, #753ca0);}
     .divider::after {transform:rotate(180deg);}
     .offer { background:rgba(26,16,39,.92); }
-    .offer .eyebrow { display:block; margin-bottom:8px; }
     .offer .desc { margin-bottom:10px; }
     .offer .desc p { margin:0; }
     .offer .desc p + p { margin-top:5px; }
+    .free-eyebrow { color: #c697ff; }
+    .free-badge { color: #62e6a4; background: #152a27; border-radius:999px; padding:7px 10px; font-weight:800; font-size:10px; white-space:nowrap; }
+    .free-price { color: #70efa9; font-size:26px; }
+    .telegram-cta { background:linear-gradient(95deg,#8741df,#6423bd); }
     .footer {display:flex;justify-content:center; align-items:center; gap:6px; margin:11px 0 0;color:#a99bb8;font-size:11px;}
     .footer svg { width:12px;height:12px; flex:none; }
     @media(max-height:750px) and (max-width:600px) {
@@ -119,7 +117,7 @@
       <p class="welcome">Welcome to my dark side. Enter at your own risk... 🖤🥀</p>
     </header>
 
-    <!-- First option: recurring subscription -->
+    <!-- First option: original Fanvue subscription (unchanged). -->
     <section class="card" aria-labelledby="join-title">
       <div class="topline">
         <span class="eyebrow">THE PRIVATE WORLD</span>
@@ -131,23 +129,27 @@
       <button class="cta" type="button" data-gate="aHR0cHM6Ly93d3cuZmFudnVlLmNvbS96b2Vnb3RoL2Z2LTM=" onclick="unlock(this)">Join Zoe 🖤</button>
     </section>
 
-    <div class="divider" aria-hidden="true">OR UNLOCK SOMETHING SPECIAL</div>
+    <div class="divider" aria-hidden="true">OR JOIN FOR FREE</div>
 
-    <!-- Second option: one-time purchase, no images on this card. -->
-    <section class="card offer" aria-labelledby="photo-title">
-      <span class="eyebrow">EXCLUSIVE PHOTO DROP</span>
-      <h2 id="photo-title">The Secret 7-Photo Drop 🦇</h2>
-      <div class="desc">
-        <p>I saved 7 little surprises for you… 🖤</p>
-        <p>Each one pulls you in deeper… and the best ones are waiting inside. 🦇</p>
+    <!-- Second option: free Telegram instead of the old 7-photo purchase. -->
+    <section class="card offer" aria-labelledby="telegram-title">
+      <div class="topline">
+        <span class="eyebrow free-eyebrow">Zoe's Free Telegram</span>
+        <span class="free-badge">FREE</span>
       </div>
-      <div class="price-line"><span class="price">$13.99</span><span class="period">one-time purchase</span></div>
-      <button class="cta" type="button" data-gate="aHR0cHM6Ly93d3cuZmFudnVlLmNvbS96b2Vnb3RoL21lZGlhL2Z2bWwtMg==" onclick="unlock(this)">Unlock All 7 Photos 🖤</button>
+      <h2 id="telegram-title">Join My Telegram 🦇</h2>
+      <div class="desc">
+        <p>More little glimpses into my dark world. 🖤</p>
+        <p>Free photos, updates & vampire vibes — straight to your Telegram.</p>
+      </div>
+      <div class="price-line"><span class="price free-price">FREE</span><span class="period">no subscription needed</span></div>
+      <!-- Free Telegram community link -->
+      <button id="telegram-button" class="cta telegram-cta" type="button" data-telegram-url="https://t.me/zoegoth" onclick="openTelegram(this)">Join Free Telegram 🖤</button>
     </section>
 
     <p class="footer">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="5" y="10" width="14" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg>
-      Secure payments
+      Secure payments on Fanvue
     </p>
   </main>
 
@@ -160,9 +162,30 @@
         if (url.protocol !== 'https:' || url.hostname !== 'www.fanvue.com') return;
         window.open(url.href, '_blank', 'noopener,noreferrer');
       } catch (error) {
-        console.error('Invalid destination link');
+        console.error('Invalid Fanvue destination link');
       }
     }
+
+    function validTelegramUrl(value) {
+      try {
+        const url = new URL(value);
+        return url.protocol === 'https:' &&
+          (url.hostname === 't.me' || url.hostname === 'telegram.me') &&
+          url.pathname.length > 1;
+      } catch (_) {
+        return false;
+      }
+    }
+    function openTelegram(button) {
+      const value = button.getAttribute('data-telegram-url') || '';
+      if (validTelegramUrl(value)) {
+        window.open(value, '_blank', 'noopener,noreferrer');
+      }
+    }
+    (function setupTelegramButton() {
+      const button = document.getElementById('telegram-button');
+      button.disabled = !validTelegramUrl(button.getAttribute('data-telegram-url') || '');
+    })();
   </script>
 </body>
 </html>
